@@ -1,14 +1,13 @@
 -- exercise 1
-SELECT * FROM Tracks WHERE Composer = 'Queen';
+CREATE TABLE ArtistGenres (
+    GenreID INTEGER PRIMARY KEY,
+    ArtistID INTEGER NOT NULL,
+    GenreName TEXT NOT NULL,
+    FOREIGN KEY (ArtistID) REFERENCES artists(ArtistId)
+);
 
 -- exercise 2
-SELECT Title, AlbumId FROM Albums WHERE ArtistId = 22;
+ALTER TABLE Employees ADD COLUMN LinkedInURL TEXT;
 
 -- exercise 3
-SELECT TrackId, Name, UnitPrice FROM Tracks WHERE UnitPrice > 0.99;
-
--- exercise 4
-SELECT * FROM Customers WHERE FirstName LIKE 'A%';
-
--- exercise 5
-SELECT TrackId, Name, GenreId FROM Tracks WHERE GenreId = 1 OR UnitPrice < 0.99;
+DROP TABLE ArtistGenres;
