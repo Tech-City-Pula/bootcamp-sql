@@ -1,0 +1,7 @@
+SELECT *
+FROM Album
+ORDER BY Title DESC;
+
+SELECT *
+FROM Artist
+ORDER BY Name ASC;
