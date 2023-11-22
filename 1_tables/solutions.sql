@@ -7,7 +7,7 @@ CREATE TABLE ArtistGenres (
 );
 
 -- exercise 2
-ALTER TABLE Employees ADD COLUMN LinkedInURL TEXT;
+ALTER TABLE Employee ADD COLUMN LinkedInURL TEXT;
 
 -- exercise 3
 DROP TABLE ArtistGenres;
