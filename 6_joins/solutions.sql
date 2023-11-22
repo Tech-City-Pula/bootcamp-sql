@@ -1,28 +1,28 @@
 -- exercise 1
-SELECT Albums.Title, Artists.Name
-FROM Albums
-INNER JOIN Artists ON Albums.ArtistId = Artists.ArtistId;
+SELECT Album.Title, Artist.Name
+FROM Album
+INNER JOIN Artist ON Album.ArtistId = Artist.ArtistId;
 
 -- exercise 2
-SELECT Tracks.Name, Albums.Title, Artists.Name
-FROM Tracks
-INNER JOIN Albums ON Tracks.AlbumId = Albums.AlbumId
-INNER JOIN Artists ON Albums.ArtistId = Artists.ArtistId;
+SELECT Track.Name, Album.Title, Artist.Name
+FROM Track
+INNER JOIN Album ON Track.AlbumId = Album.AlbumId
+INNER JOIN Artist ON Album.ArtistId = Artist.ArtistId;
 
 -- exercise 3
-SELECT Employees.FirstName || ' ' || Employees.LastName AS EmployeeName, 
-       Customers.FirstName || ' ' || Customers.LastName AS CustomerName
-FROM Employees
-LEFT JOIN Customers ON Employees.EmployeeId = Customers.SupportRepId;
+SELECT Employee.FirstName || ' ' || Employee.LastName AS EmployeeName, 
+       Customer.FirstName || ' ' || Customer.LastName AS CustomerName
+FROM Employee
+LEFT JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId;
 
 -- exercise 4
-SELECT Tracks.Name, Genres.Name AS GenreName
-FROM Tracks
-INNER JOIN Genres ON Tracks.GenreId = Genres.GenreId
-WHERE Genres.Name = 'Rock';
+SELECT Track.Name, Genre.Name AS GenreName
+FROM Track
+INNER JOIN Genre ON Track.GenreId = Genre.GenreId
+WHERE Genre.Name = 'Rock';
 
 -- exercise 5
-SELECT Genres.Name, COUNT(Tracks.TrackId) AS TotalTracks
-FROM Tracks
-INNER JOIN Genres ON Tracks.GenreId = Genres.GenreId
-GROUP BY Genres.Name;
+SELECT Genre.Name, COUNT(Track.TrackId) AS TotalTracks
+FROM Track
+INNER JOIN Genre ON Track.GenreId = Genre.GenreId
+GROUP BY Genre.Name;
